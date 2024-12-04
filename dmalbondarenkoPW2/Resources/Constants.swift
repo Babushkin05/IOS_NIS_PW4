@@ -90,4 +90,8 @@ enum Constants {
     
     // MARK: - Animation Constants
     static let animationDuration: TimeInterval = 0.5
+    
+    // MARK: - UICollection view
+    static let contentInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    static let collectionTop: CGFloat = 10
 }

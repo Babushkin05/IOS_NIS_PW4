@@ -7,5 +7,10 @@
 import UIKit
 
 final class WishCalendarView: UIView {
+    private let collectionView: UICollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
+    
     
 }
