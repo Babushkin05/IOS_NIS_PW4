@@ -57,6 +57,12 @@ final class WishMakerView: UIView {
         backgroundColor = color
     }
     
+    func updateButtonsColot(to color: UIColor) {
+        toggleButton.setTitleColor(color, for: .normal)
+        addWishButton.setTitleColor(color, for: .normal)
+        scheduleWishesButton.setTitleColor(color, for: .normal)
+    }
+    
     func setStackVisibility(isHidden: Bool) {
         stack.isHidden = isHidden
     }

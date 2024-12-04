@@ -20,13 +20,13 @@ final class WishMakerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCallbacks()
-        updateBackgroundAndTextColor()
+        updateColors()
     }
     
     // MARK: - Private Methods
     private func configureCallbacks() {
         wishMakerView.onColorChange = { [weak self] color in
-            self?.updateBackgroundAndTextColor(to: color)
+            self?.updateColors(to: color)
         }
         
         wishMakerView.onToggleButtonPressed = { [weak self] in
@@ -38,7 +38,7 @@ final class WishMakerViewController: UIViewController {
         }
     }
     
-    private func updateBackgroundAndTextColor(to color: UIColor? = nil) {
+    private func updateColors(to color: UIColor? = nil) {
         let backgroundColor = color ?? UIColor(
             red: CGFloat(wishMakerView.redSliderValue),
             green: CGFloat(wishMakerView.greenSliderValue),
@@ -48,6 +48,7 @@ final class WishMakerViewController: UIViewController {
         
         wishMakerView.updateBackgroundColor(to: backgroundColor)
         wishMakerView.updateTextColor(to: backgroundColor.inverted())
+        wishMakerView.updateButtonsColot(to: backgroundColor)
     }
     
     private func toggleStackVisibility() {
