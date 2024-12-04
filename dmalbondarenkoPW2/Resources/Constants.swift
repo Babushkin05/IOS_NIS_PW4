@@ -94,4 +94,9 @@ enum Constants {
     // MARK: - UICollection view
     static let contentInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     static let collectionTop: CGFloat = 10
+    
+    // MARK: - WishEventCell
+    static let offset: CGFloat = 10
+    static let titleTop: CGFloat = 10
+    static let titleLeading: CGFloat = 10
 }
