@@ -36,6 +36,11 @@ final class WishMakerViewController: UIViewController {
         wishMakerView.onWishButtonPressed = { [weak self] in
             self?.addWish()
         }
+        
+        wishMakerView.onScheduleButtonPressed = { [weak self] in
+            let vc = WishCalendarViewController()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func updateColors(to color: UIColor? = nil) {

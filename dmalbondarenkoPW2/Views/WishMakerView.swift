@@ -29,6 +29,7 @@ final class WishMakerView: UIView {
     var onColorChange: ((UIColor) -> Void)?
     var onToggleButtonPressed: (() -> Void)?
     var onWishButtonPressed: (() -> Void)?
+    var onScheduleButtonPressed: (() -> Void)?
     
     // MARK: - Properties
     var redSliderValue: Float { sliderRed.slider.value }
@@ -174,7 +175,7 @@ final class WishMakerView: UIView {
         scheduleWishesButton.setTitle(Constants.scheduleButtonText, for: .normal)
         scheduleWishesButton.layer.cornerRadius = Constants.stackRadius
         scheduleWishesButton.layer.borderWidth = Constants.borderWidth
-        //target
+        scheduleWishesButton.addTarget(self, action: #selector (scheduleButtonPressed), for: .touchUpInside)
         
         addSubview(scheduleWishesButton)
         scheduleWishesButton.setHeight(Constants.buttonHeight)
@@ -212,5 +213,9 @@ final class WishMakerView: UIView {
     
     @objc private func wishButtonPressed() {
         onWishButtonPressed?()
+    }
+    
+    @objc private func scheduleButtonPressed() {
+        onScheduleButtonPressed?()
     }
 }
